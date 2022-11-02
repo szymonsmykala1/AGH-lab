@@ -1,9 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-var configuration = (IConfiguration) app.Services.GetService(typeof(IConfiguration))!;
+var configuration = (IConfiguration)app.Services.GetService(typeof(IConfiguration))!;
 
-// app.MapGet("/", () => $"Hello World! xD${configuration.GetSection("MyKey").Value}");
-app.MapGet("/", () => $"Passing TEST");
+app.MapGet("/", () => $"Hello World! Value: {configuration.GetSection("test").Value} SWAPPED");
 
 app.Run();
