@@ -3,6 +3,6 @@ var app = builder.Build();
 
 var configuration = (IConfiguration)app.Services.GetService(typeof(IConfiguration))!;
 
-app.MapGet("/", () => $"Hello World! Value: {configuration.GetSection("test").Value} SWAPPED v2");
+app.MapGet("/", () => $"Hello World! Value: {configuration.GetSection("test").Value} SWAPPED v3");
 
 app.Run();
